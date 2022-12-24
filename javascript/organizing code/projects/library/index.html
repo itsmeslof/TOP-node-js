@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=nunito:600,800" rel="stylesheet" />
+
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <section id="modalContainer">
+        <div id="addBookModal">
+            <p class="white">Add a book!</p>
+            <form id="addBookForm">
+                <input type="text" name="title" placeholder="Title">
+            </form>
+        </div>
+    </section>
+
+    <header>
+        <div class="wrapper">
+            <h1>Library</h1>
+            <button id="addBookBtn">Add Book</button>
+        </div>
+    </header>
+
+    <section class="content-wrapper">
+        <section class="books-list">
+            <h1 class="white">Available Books:</h1>
+            <div id="list-container"></div>
+        </section>
+    </section>
+
+    <script src="library.js"></script>
+</body>
+</html>
