@@ -15,12 +15,37 @@
 <body>
     <section id="modalContainer">
         <div id="addBookModal">
-            <p class="white">Add a book!</p>
+            <p class="white form-title">Add a book</p>
             <form id="addBookForm">
-                <input type="text" name="title" placeholder="Title">
+                <div class="input-group">
+                    <label for="title" class="white">Title</label>
+                    <input type="text" name="title" placeholder="Title" id="titleField" required>
+                </div>
+                <div class="input-group">
+                    <label for="author" class="white">Author</label>
+                    <input type="text" name="author" placeholder="Author" id="authorField" required>
+                </div>
+                <div class="input-group">
+                    <label for="pageCount" class="white"># of Pages</label>
+                    <input type="number" name="pageCount" placeholder="Pages" id="pageCountField" required step="1" min="1">
+                </div>
+                <div class="input-group">
+                    <label for="hasRead" class="white">Have you read this book?</label>
+                    <select name="hasRead" id="hasReadSelectField" required>
+                        <option value="true">Yes</option>
+                        <option value="true">No</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <button type="submit">Add Book</button>
+                </div>
             </form>
         </div>
     </section>
+
+    <div id="alert">
+        <p class="white alert-message"></p>
+    </div>
 
     <header>
         <div class="wrapper">
