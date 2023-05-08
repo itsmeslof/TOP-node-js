@@ -97,26 +97,13 @@ function createListItemForBook(book) {
   removeBtn.classList.add("remove-btn");
   toggleReadBtn.classList.add("toggle-read-btn");
 
-  if (book.hasRead) {
-    toggleReadBtn.classList.add("has-read");
-    toggleReadBtn.textContent = "Mark As Unread";
-  } else {
-    toggleReadBtn.classList.add("unread");
-    toggleReadBtn.textContent = "Mark As Read";
-  }
+  toggleReadBtn.classList.add(book.hasRead ? "has-read" : "unread");
+  toggleReadBtn.textContent = `Mark As ${book.hasRead ? "Unread" : "Read"}`;
 
-  detailsGroup.appendChild(author);
-  detailsGroup.appendChild(pageCount);
-  detailsGroup.appendChild(hasRead);
-
-  detailsWrapper.appendChild(title);
-  detailsWrapper.appendChild(detailsGroup);
-
-  actionsGroup.appendChild(toggleReadBtn);
-  actionsGroup.appendChild(removeBtn);
-
-  listItem.appendChild(detailsWrapper);
-  listItem.appendChild(actionsGroup);
+  detailsGroup.append(author, pageCount, hasRead);
+  detailsWrapper.append(title, detailsGroup);
+  actionsGroup.append(toggleReadBtn, removeBtn);
+  listItem.append(detailsWrapper, actionsGroup);
 
   return listItem;
 }
